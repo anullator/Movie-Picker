@@ -4,13 +4,18 @@
 
 Search and display movies using different filters, and play trailers
 
-Options include:
-
-- release date
-- genre
-- rating
-- Title keywords
-- streaming service?
+- search by title
+- search by filters in a given country:
+  - filters include:
+    - country (req)
+    - services (req)
+    - show_type
+    - genres
+    - year_min
+    - year_max
+    - keyword
+    - order_by
+    - desc
 
 ## Developers
 
@@ -28,9 +33,16 @@ Options include:
 
 ## Tech Stack
 
-- What languages is it written with: JavaScript
+- What languages is it written with:
+
+  - JavaScript
+  - CSS
+  - HTML
 
 - What libraries are used:
+
+  - Bulma
+  - Javascript
 
 - Other:
 
@@ -38,6 +50,7 @@ Options include:
 
 - OMDb
 - YouTube
+- Streaming Availability by Movie of the Night (Rapid API)
 - Just Watch API? - if access to API is approved in time
 
 ## MVP (Minimum Viable Product)

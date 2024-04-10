@@ -3,9 +3,21 @@ const streamAvailBaseURL = 'https://streaming-availability.p.rapidapi.com';
 
 
 // store movie input to local storage
-function storeTitle() {
-    const title = document.getElementById('title').textContent;
-    localStorage.setItem('movie', title);
+function storeTitle(event) {
+    event.preventDefault(); // remove later
+    const title = document.getElementById('title').value;
+
+    if (title) {
+        localStorage.setItem('title', title);
+        document.getElementById('title').value = '';
+    } else {
+        alert('Please enter a movie title');
+    }
+
+}
+
+function handleSearch() {
+    fetchdata();
 }
 
 // get movies using api
@@ -14,5 +26,5 @@ function storeTitle() {
 
 // load function and add event listeners
 window.onload = function() {
-    document.getElementById('search').addEventListener('click', handleSearch);
+    document.getElementById('search').addEventListener('click', storeTitle); //revert to handle search
 }

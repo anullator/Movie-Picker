@@ -6,8 +6,6 @@ const streamAvailBaseURL = 'https://streaming-availability.p.rapidapi.com';
 function storeTitle() {
     const title = document.getElementById('title').textContent;
     localStorage.setItem('movie', title);
-
-
 }
 
 // get movies using api
@@ -35,4 +33,8 @@ async function fetchdata(event) {
 // render movies
 
 // load function and add event listeners
-
+window.onload = function() {
+    document.getElementById('search').addEventListener('click', () => {  
+      handleSearch();
+      fetchdata();
+}

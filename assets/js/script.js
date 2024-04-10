@@ -3,8 +3,7 @@ const streamAvailBaseURL = 'https://streaming-availability.p.rapidapi.com';
 
 
 // store movie input to local storage
-function storeTitle(event) {
-    event.preventDefault(); // remove later
+function storeTitle() {
     const title = document.getElementById('title').value;
 
     if (title) {
@@ -13,16 +12,17 @@ function storeTitle(event) {
     } else {
         alert('Please enter a movie title');
     }
-
 }
 
-function handleSearch() {
+// handle click on search button
+function handleSearch(event) {
+    event.preventDefault(); 
+    storeTitle();
     fetchdata();
 }
 
 // get movies using api
-
-async function fetchdata(event) {
+async function fetchdata() {
     const movieInput = document.getElementById('title').value
     const url = `https://streaming-availability.p.rapidapi.com/search/title?title=${movieInput}&country=us&show_type=all&output_language=en`;
     const options = {

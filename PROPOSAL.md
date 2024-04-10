@@ -59,4 +59,5 @@ Displays movies based on title search with ability to play the trailer
 
 ## Stretch Goals
 
--
+- second page to save movie list
+- search by filter

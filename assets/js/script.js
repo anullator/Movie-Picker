@@ -16,14 +16,14 @@ function storeTitle() {
 
 // handle click on search button
 function handleSearch(event) {
-    event.preventDefault(); 
+    event.preventDefault();
     storeTitle();
     fetchdata();
 }
 
 // get movies using api
 async function fetchdata() {
-    const movieInput = document.getElementById('title').value
+    const movieInput = localStorage.getItem('title')
     const url = `https://streaming-availability.p.rapidapi.com/search/title?title=${movieInput}&country=us&show_type=all&output_language=en`;
     const options = {
         method: 'GET',
@@ -35,7 +35,7 @@ async function fetchdata() {
 
     try {
         const response = await fetch(url, options);
-        const result = await response.text();
+        const result = await response.json();
         console.log(result);
     } catch (error) {
         console.error(error);
@@ -45,6 +45,6 @@ async function fetchdata() {
 // render movies
 
 // load function and add event listeners
-window.onload = function() {
+window.onload = function () {
     document.getElementById('search').addEventListener('click', handleSearch); //revert to handle search
 }

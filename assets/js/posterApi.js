@@ -38,3 +38,32 @@ async function moviePosters(id) {
         console.error(error)
     }
 }
+
+async function trendingMovies() {
+    try {
+        const response = await fetch(`https://api.themoviedb.org/3/trending/movie/day?language=en-US&${apiKey}`)
+
+        if (!response.ok) {
+            throw new error('could not fetch')
+        }
+
+        const { results } = await response.json()
+        console.log(results)
+        const topMovieBox = document.getElementById('topMovieBox')
+        for (i = 0; i < 8; i++) {
+            const topMovie = results[i]
+            console.log(topMovie)
+            const moviePoster = topMovie.poster_path
+            const topMoviePoster = document.createElement('img')
+            topMoviePoster.setAttribute('id', 'top-movie-poster')
+            topMoviePoster.src = `https://image.tmdb.org/t/p/w500${moviePoster}`
+            topMovieBox.appendChild(topMoviePoster)
+        }
+
+    }
+    catch (error) {
+        console.error(error)
+    }
+}
+
+trendingMovies()

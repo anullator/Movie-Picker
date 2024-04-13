@@ -17,6 +17,7 @@ function storeTitle(movieInput) {
 // handle click on search button
 function handleSearch(event) {
     event.preventDefault();
+
     const movieInput = document.getElementById('title').value;
     storeTitle(movieInput);
     fetchdata(movieInput);
@@ -36,7 +37,7 @@ async function fetchdata(movieInput) {
 
     try {
         const response = await fetch(url, options);
-        const result = await response.text();
+        const result = await response.json();
         console.log(result);
     } catch (error) {
         console.error(error);
@@ -46,6 +47,6 @@ async function fetchdata(movieInput) {
 // render movies
 
 // load function and add event listeners
-window.onload = function() {
+window.onload = function () {
     document.getElementById('search').addEventListener('click', handleSearch); //revert to handle search
 }

@@ -2,33 +2,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <title>Movify</title>
 </head>
 <body>
     <header>
         <h1>Movify</h1>
     </header>
-    <aside>
-        <!-- add genres here -->
-        <ul>
-            <li></li>
-            <li></li>
-        </ul>
-    </aside>
-    <main>
-        <section>
-                <label for="title">Search Movify</label>
-                <input id="title" name="title" type="text">
-                <button id="search">Search</button>
-                <div id="posterBox"></div>
-        </section>
-        <article id="movie-container">
+    <div id="container">
+        <aside>
+            <h1>sidebar</h1>
+            <!-- add genres here -->
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </aside>
+        <main>
+            <section>
+                <div id="search-box">
+                    <label for="title">Search Movify</label>
+                    <input id="title" name="title" type="text">
+                    <button id="search">Search</button>
+                </div>
+                    <!-- <div id="posterBox"></div> -->
+                    <div id="topMovieBox"></div>
+                    <section id="trailer-container"></section>
+            </section>
+            <article id="movie-container">
 
-        </article>
-        <section id="trailer-container">
-            
-        </section>
-    </main>
+            </article>
+            <section id="trailer-container">
+                
+            </section>
+        </main>
+    </div>
     <footer></footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

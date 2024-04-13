@@ -1,0 +1,64 @@
+#top-movie-poster {
+    width: 20%;
+
+}
+
+h1 {
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    border: solid;
+}
+
+#container {
+    display: flex;
+    height: 100%;
+
+}
+
+aside {
+    border: solid;
+    width: 40%;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+#search-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    gap: 10px;
+}
+
+label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#title {
+    width: 50%;
+}
+
+#search {
+    width: 10%;
+}
+
+#topMovieBox {
+    display: flex;
+    height: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}

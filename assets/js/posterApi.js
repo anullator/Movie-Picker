@@ -25,7 +25,6 @@ async function moviePosters(id) {
         }
 
         const responseJson = await response.json();
-
         const posterList = responseJson.posters
         const posterImage = posterList[0].file_path
         const posterBox = document.getElementById('posterBox')

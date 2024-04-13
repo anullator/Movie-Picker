@@ -35,7 +35,7 @@ async function fetchdata(movieInput) {
     };
     try {
         const response = await fetch(url, options);
-        const { result } = await response.json()
+        const { result } = await response.json();
         // grabbing tmdbID within api
         const movieList = result
         const movieID = movieList[0].tmdbId
@@ -44,8 +44,8 @@ async function fetchdata(movieInput) {
         console.log(movieID);
 
         // attaching tmdbID to moviePoster function
-        moviePosters(movieID)
-        getTrailers(movieID);
+        moviePosters(movieID);
+        getTrailerID(movieID);
 
     } catch (error) {
         console.error(error);

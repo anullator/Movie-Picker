@@ -25,6 +25,13 @@ async function moviePosters(id) {
         }
 
         const responseJson = await response.json();
+        const posterList = responseJson.posters
+        const posterImage = posterList[0].file_path
+        const posterBox = document.getElementById('posterBox')
+        const poster = document.createElement('img')
+        poster.src = `https://image.tmdb.org/t/p/w500${posterImage}`
+
+        posterBox.appendChild(poster)
         console.log(responseJson)
     }
     catch (error) {

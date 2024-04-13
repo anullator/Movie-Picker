@@ -34,11 +34,19 @@ async function fetchdata(movieInput) {
             'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
         }
     };
-
     try {
         const response = await fetch(url, options);
-        const result = await response.json();
-        console.log(result);
+        const { result } = await response.json()
+        // grabbing tmdbID within api
+        const movieList = result
+        const movieID = movieList[0].tmdbId
+
+        console.log(result)
+        console.log(movieID);
+
+        // attaching tmdbID to moviePoster function
+        moviePosters(movieID)
+
     } catch (error) {
         console.error(error);
     }

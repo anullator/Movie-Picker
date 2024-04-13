@@ -25,7 +25,6 @@ function handleSearch(event) {
 
 // get movies using api
 async function fetchdata(movieInput) {
-    // const movieInput = document.getElementById('title').value;
     const url = `${streamBaseURL}/search/title?title=${movieInput}&country=us&show_type=all&output_language=en`;
     const options = {
         method: 'GET',
@@ -46,6 +45,7 @@ async function fetchdata(movieInput) {
 
         // attaching tmdbID to moviePoster function
         moviePosters(movieID)
+        getTrailers(movieID);
 
     } catch (error) {
         console.error(error);

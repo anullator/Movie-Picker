@@ -9,32 +9,34 @@
     <header>
         <h1>Movify</h1>
     </header>
-    <aside>
-        <!-- add genres here -->
-        <ul>
-            <li></li>
-            <li></li>
-        </ul>
-    </aside>
-    <main>
+    <div id="container">
         <aside>
             <h1>sidebar</h1>
+            <!-- add genres here -->
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
         </aside>
-        <section>
-                <label for="title">Search Movify</label>
-                <input id="title" name="title" type="text">
-                <button id="search">Search</button>
-                <div id="posterBox"></div>
-                <div id="topMovieBox"></div>
-                <section id="trailer-container"></section>
-        </section>
-        <article id="movie-container">
+        <main>
+            <section>
+                <div id="search-box">
+                    <label for="title">Search Movify</label>
+                    <input id="title" name="title" type="text">
+                    <button id="search">Search</button>
+                </div>
+                    <!-- <div id="posterBox"></div> -->
+                    <div id="topMovieBox"></div>
+                    <section id="trailer-container"></section>
+            </section>
+            <article id="movie-container">
 
-        </article>
-        <section id="trailer-container">
-            
-        </section>
-    </main>
+            </article>
+            <section id="trailer-container">
+                
+            </section>
+        </main>
+    </div>
     <footer></footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

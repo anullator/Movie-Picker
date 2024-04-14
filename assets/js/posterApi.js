@@ -52,7 +52,7 @@ async function trendingMovies() {
         const topMovieBox = document.getElementById('topMovieBox')
         for (i = 0; i < 8; i++) {
             const topMovie = results[i]
-            console.log(topMovie)
+            // console.log(topMovie)
             const moviePoster = topMovie.poster_path
             const topMoviePoster = document.createElement('img')
             topMoviePoster.setAttribute('id', 'top-movie-poster')

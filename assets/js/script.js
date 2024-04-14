@@ -17,6 +17,8 @@ function storeTitle(movieInput) {
 // handle click on search button
 function handleSearch(event) {
     event.preventDefault();
+    $('#posterBox').empty(); // clears previos poster from postercontainer
+    $('#trailer-container').empty(); //clears previous trailer from trailer container
 
     const movieInput = document.getElementById('title').value;
     storeTitle(movieInput);
@@ -45,7 +47,7 @@ async function fetchdata(movieInput) {
 
         // attaching tmdbID to moviePoster function
         moviePosters(movieID);
-        getTrailerID(movieID);
+        renderTrailer(movieID);
 
     } catch (error) {
         console.error(error);

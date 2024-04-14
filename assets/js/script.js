@@ -17,6 +17,8 @@ function storeTitle(movieInput) {
 // handle click on search button
 function handleSearch(event) {
     event.preventDefault();
+    $('#posterBox').empty(); // clears previos poster from postercontainer
+    $('#trailer-container').empty(); //clears previous trailer from trailer container
 
     const movieInput = document.getElementById('title').value;
     storeTitle(movieInput);
@@ -35,7 +37,7 @@ async function fetchdata(movieInput) {
     };
     try {
         const response = await fetch(url, options);
-        const { result } = await response.json()
+        const { result } = await response.json();
         // grabbing tmdbID within api
         const movieList = result
         const movieID = movieList[0].tmdbId
@@ -44,8 +46,8 @@ async function fetchdata(movieInput) {
         console.log(movieID);
 
         // attaching tmdbID to moviePoster function
-        moviePosters(movieID)
-        getTrailers(movieID);
+        moviePosters(movieID);
+        renderTrailer(movieID);
 
     } catch (error) {
         console.error(error);

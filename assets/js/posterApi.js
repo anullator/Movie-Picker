@@ -17,8 +17,7 @@ fetch('https://api.themoviedb.org/3/authentication', options)
 // poster API
 async function moviePosters(id) {
     try {
-        const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/images?${apiKey}`)
-        console.log(response)
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/images?${apiKey}&include_image_language=en`)
 
         if (!response.ok) {
             throw new error('could not fetch')
@@ -33,6 +32,7 @@ async function moviePosters(id) {
 
         posterBox.appendChild(poster)
         console.log(responseJson)
+        const tmdbId = responseJson.id
     }
     catch (error) {
         console.error(error)
@@ -58,6 +58,13 @@ async function trendingMovies() {
             topMoviePoster.setAttribute('id', 'top-movie-poster')
             topMoviePoster.src = `https://image.tmdb.org/t/p/w500${moviePoster}`
             topMovieBox.appendChild(topMoviePoster)
+            const movieTitle = topMovie.title
+            console.log(movieTitle)
+            topMoviePoster.onclick = function () {
+                localStorage.setItem("title", movieTitle)
+                localStorage.setItem('tmdbId', tmdbId)
+                window.location.href = "movie-info/index.html"
+            }
         }
 
     }
@@ -65,5 +72,3 @@ async function trendingMovies() {
         console.error(error)
     }
 }
-
-trendingMovies()

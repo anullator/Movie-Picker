@@ -14,15 +14,21 @@ function storeTitle(movieInput) {
     }
 }
 
+function storeId(tmdbId) {
+    if (tmdbId) {
+        localStorage.setItem('tmdbID', tmdbId)
+    }
+}
+
 // handle click on search button
 function handleSearch(event) {
     event.preventDefault();
-    $('#posterBox').empty(); // clears previos poster from postercontainer
+    $('#posterBox').empty(); // clears previous poster from postercontainer
     $('#trailer-container').empty(); //clears previous trailer from trailer container
 
     const movieInput = document.getElementById('title').value;
     storeTitle(movieInput);
-    fetchdata(movieInput);
+    window.location.href = "movie-search/index.html"
 }
 
 // get movies using api
@@ -40,23 +46,28 @@ async function fetchdata(movieInput) {
         const { result } = await response.json();
         // grabbing tmdbID within api
         const movieList = result
-        const movieID = movieList[0].tmdbId
+        for (let i = 0; i < movieList.length; i++) {
+            let movies = movieList[i]
+            const tmdbId = movies.tmdbId
+            // attaching tmdbID to moviePoster function
+            moviePosters(tmdbId);
+
+        }
+        storeId(tmdbId)
+        renderTrailer(tmdbId);
+        movieTitle(tmdbId);
 
         console.log(result)
-        console.log(movieID);
-
-        // attaching tmdbID to moviePoster function
-        moviePosters(movieID);
-        renderTrailer(movieID);
 
     } catch (error) {
         console.error(error);
     }
 }
-
 // render movies
 
 // load function and add event listeners
 window.onload = function () {
     document.getElementById('search').addEventListener('click', handleSearch); //revert to handle search
+    trendingMovies()
+
 }

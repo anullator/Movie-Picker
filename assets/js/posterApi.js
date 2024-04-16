@@ -29,17 +29,22 @@ async function moviePosters(id) {
         const posterBox = document.getElementById('posterBox')
         const poster = document.createElement('img')
         poster.src = `https://image.tmdb.org/t/p/w500${posterImage}`
-
+        poster.onclick = function () {
+            console.log('clicked', responseJson.id)
+            localStorage.setItem('selectedMovie', responseJson.id)
+            window.location.href = "/movie-info/index.html"
+        }
         posterBox.appendChild(poster)
         console.log(responseJson)
         const tmdbId = responseJson.id
+        // trendingMovies(tmdbId)
     }
     catch (error) {
         console.error(error)
     }
 }
 
-async function trendingMovies() {
+async function trendingMovies(tmdbId) {
     try {
         const response = await fetch(`https://api.themoviedb.org/3/trending/movie/day?language=en-US&${apiKey}`)
 
@@ -61,9 +66,8 @@ async function trendingMovies() {
             const movieTitle = topMovie.title
             console.log(movieTitle)
             topMoviePoster.onclick = function () {
-                localStorage.setItem("title", movieTitle)
-                localStorage.setItem('tmdbId', tmdbId)
-                window.location.href = "movie-info/index.html"
+                localStorage.setItem('selectedMovie', topMovie.id)
+                window.location.href = "/movie-info/index.html"
             }
         }
 

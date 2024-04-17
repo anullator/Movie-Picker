@@ -50,7 +50,7 @@ searchMessage.textContent = `Results for "${localStorage.getItem('title')}"`
 searchBox.appendChild(searchMessage)
 
 
-async function trendingMovies() {
+async function trendingMovies(tmdbId) {
     try {
         const response = await fetch(`https://api.themoviedb.org/3/trending/movie/day?language=en-US&${apiKey}`)
 
@@ -63,7 +63,7 @@ async function trendingMovies() {
         const topMovieBox = document.getElementById('topMovieBox')
         for (i = 0; i < 12; i++) {
             const topMovie = results[i]
-            console.log(topMovie)
+            // console.log(topMovie)
             const moviePoster = topMovie.poster_path
             const topMoviePoster = document.createElement('img')
             topMoviePoster.setAttribute('class', 'top-movie-poster')
@@ -73,11 +73,7 @@ async function trendingMovies() {
             console.log(movieTitle)
             topMoviePoster.onclick = function () {
                 localStorage.setItem('selectedMovie', topMovie.id)
-                window.location.href = "movie-info/index.html" // potentially await page load
-
-                // fetch id and video info for selected video trailer
-                    // await trailer video
-                    // if no video, insert placeholder of my choice (othervideo, thumbnail, text etc)
+                window.location.href = "movie-info/index.html"
             }
         }
 

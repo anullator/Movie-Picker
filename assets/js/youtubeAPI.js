@@ -32,6 +32,7 @@ async function renderTrailer(tmdbID) {
     const url = $('iframe').attr('src');
     $('iframe').attr('src', `https:${url}`); //sets ifram src url
 
+    // TODO:if no trailer, fetch trailer api? or insert thumbnail
 }
 
 

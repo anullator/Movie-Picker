@@ -73,7 +73,7 @@ async function trendingMovies(tmdbId) {
             console.log(movieTitle)
             topMoviePoster.onclick = function () {
                 localStorage.setItem('selectedMovie', topMovie.id)
-                window.location.href = "/movie-info/index.html"
+                window.location.href = "movie-info/index.html"
             }
         }
 

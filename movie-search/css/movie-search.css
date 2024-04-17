@@ -1,0 +1,44 @@
+header {
+    border-bottom: solid;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#container {
+    display: flex;
+    height: 100%;
+
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+#posterBox {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.poster {
+    width: 20%;
+    border-radius: .75rem;
+}
+
+#searchBox {
+    text-align: center;
+    font-size: 40px;
+    padding: 25px;
+
+}

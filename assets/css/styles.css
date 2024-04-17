@@ -1,5 +1,6 @@
 .top-movie-poster {
     width: 20%;
+    border-radius: 1rem;
 
 }
 
@@ -12,10 +13,12 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: #181a1b;
 }
 
 header {
-    border: solid;
+    border-bottom: solid;
+    padding: 20px;
 }
 
 #container {
@@ -24,10 +27,6 @@ header {
 
 }
 
-aside {
-    border: solid;
-    width: 40%;
-}
 
 section {
     display: flex;
@@ -63,19 +62,8 @@ label {
     justify-content: center;
 }
 
-#posterBox {
-    display: flex;
-    height: 100%;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
 
-.poster {
+.poster-info {
     width: 20%;
-}
-
-#searchBox {
-    text-align: center;
-    font-size: 25px;
+    border-radius: .75rem;
 }

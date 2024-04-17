@@ -15,6 +15,7 @@ async function getMovieData() {
     // appends poster to page
     const poster = document.createElement('img');
     poster.src = `https://image.tmdb.org/t/p/w500${responseJson.poster_path}`;
+    poster.setAttribute('class', 'poster-info')
     $('#posterBox').append(poster);
 
     // get and appends trailer to page
@@ -29,7 +30,7 @@ async function getMovieData() {
 
     // release date
     const dateEl = document.createElement('p');
-    const unformattedDate =responseJson.release_date;
+    const unformattedDate = responseJson.release_date;
     const formattedDate = dayjs(unformattedDate).format('MMM DD, YYYY');
     dateEl.innerHTML = `Release Date: ${formattedDate}`;
     $('#details-container').append(dateEl);
@@ -41,7 +42,7 @@ async function getMovieData() {
 
     // ---- add genres -----
     const genres = responseJson.genres;
-    
+
     genres.forEach(genre => {
         const genreEl = document.createElement('li');
         genreEl.innerHTML = genre.name;

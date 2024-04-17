@@ -62,3 +62,20 @@ label {
     flex-wrap: wrap;
     justify-content: center;
 }
+
+#posterBox {
+    display: flex;
+    height: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.poster {
+    width: 20%;
+}
+
+#searchBox {
+    text-align: center;
+    font-size: 25px;
+}

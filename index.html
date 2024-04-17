@@ -3,6 +3,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/Semantic-UI-CSS-master/semantic.min.css">
+<script
+src="https://code.jquery.com/jquery-3.1.1.min.js"
+integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+crossorigin="anonymous"></script>
+<script src="assets/css/Semantic-UI-CSS-master/semantic.min.js"></script>
     <title>Movify</title>
 </head>
 <body>
@@ -21,10 +27,10 @@
         <main>
             <section>
                 <!-- search container -->
-                <div id="search-box">
+                <div id="search-box" class="ui icon input">
                     <label for="title">Search Movify</label>
-                    <input id="title" name="title" type="text">
-                    <button id="search">Search</button>
+                    <input id="title" name="title" type="text" placeholder="Search....">
+                    <button id="search" class="ui right labeled icon"><i class="right arrow icon"></i>Search</button>
                 </div>
 
                 <!-- top movies container -->

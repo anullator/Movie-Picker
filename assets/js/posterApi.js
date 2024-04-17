@@ -28,6 +28,7 @@ async function moviePosters(id) {
         const posterImage = posterList[0].file_path
         const posterBox = document.getElementById('posterBox')
         const poster = document.createElement('img')
+        poster.setAttribute('class', 'poster')
         poster.src = `https://image.tmdb.org/t/p/w500${posterImage}`
         poster.onclick = function () {
             console.log('clicked', responseJson.id)
@@ -36,15 +37,20 @@ async function moviePosters(id) {
         }
         posterBox.appendChild(poster)
         console.log(responseJson)
-        
+        // trendingMovies(tmdbId)
     }
     catch (error) {
         console.error(error)
     }
 }
 
-async function trendingMovies() {
+const searchBox = document.getElementById('searchBox')
+const searchMessage = document.createElement('h2')
+searchMessage.textContent = `Results for "${localStorage.getItem('title')}"`
+searchBox.appendChild(searchMessage)
 
+
+async function trendingMovies() {
     try {
         const response = await fetch(`https://api.themoviedb.org/3/trending/movie/day?language=en-US&${apiKey}`)
 
@@ -54,9 +60,8 @@ async function trendingMovies() {
 
         const { results } = await response.json()
         console.log(results)
-
-        const topMovieBox = document.getElementById('topMovieBox');
-        for (i = 0; i < 8; i++) {
+        const topMovieBox = document.getElementById('topMovieBox')
+        for (i = 0; i < 12; i++) {
             const topMovie = results[i]
             console.log(topMovie)
             const moviePoster = topMovie.poster_path

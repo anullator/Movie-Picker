@@ -1,6 +1,8 @@
-header {
-    border-bottom: solid;
-    padding: 20px;
+.nav-bar {
+    border-bottom: solid white;
+    display: flex;
+    justify-content: center;
+    background-color: #181a1b;
 }
 
 h1 {
@@ -8,8 +10,9 @@ h1 {
 }
 
 
-body {
+.body {
     margin: 0;
+    background-color: #181a1b;
 }
 
 
@@ -46,4 +49,8 @@ body {
     text-align: center;
     font-size: 40px;
     padding: 25px;
+}
+
+.search-result-msg {
+    color: white;
 }

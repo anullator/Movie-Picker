@@ -11,25 +11,28 @@
     crossorigin="anonymous"></script>
     <script src="assets/css/Semantic-UI-CSS-master/semantic.min.js"></script>
 </head>
-<body>
-    <header>
-        <h1>Movify</h1>
+<body class="body">
+    <header class="nav-bar">
+        <img src="/assets/pictures/fauget.png" alt="movify logo">
+    
     </header>
     <div id="container">
         <main>
-        <div id="posterBox">
-            <!-- movie poster/trailer box -->
-        </div>
-        <div id="trailer-box"></div>
-        <div id="details-box">
-            <!-- movie info, summary, actors, etc -->
-            <div id="actors-box">
-                <h2>Actors</h2>
+            <div id="top-container">
+            <div id="posterBox"></div>
+            <div id="details-container"></div>
             </div>
-            <div id="director-box">
-                <h2>Directors</h2>
+            <h2>Actors</h2>
+            <div id="flex-container">
+                <div id="people-flex">
+                    <div id="actors-box">
+                    </div>
+                    <div id="director-box">
+                        <h2>Directors</h2>
+                    </div>
+                </div>
+                <div id="trailer-container"></div>
             </div>
-        </div>
         <div>
             <!-- TODO:available streaming platforms -->
         </div>

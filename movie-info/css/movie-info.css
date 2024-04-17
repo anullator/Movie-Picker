@@ -1,20 +1,88 @@
-h1 {
-    text-align: center;
-}
-
 .poster-info {
-    width: 20%;
     border-radius: .75rem;
+    height: 90%;
 }
 
-body {
+.body {
     margin: 0;
     height: 100vh;
+    flex-direction: column;
+    background-color: #181a1b;
+    color: white;
+}
+
+.nav-bar {
+    border-bottom: solid white;
+    display: flex;
+    justify-content: center;
+    background-color: #181a1b;
+}
+
+main {
     display: flex;
     flex-direction: column;
 }
 
-header {
-    border-bottom: solid;
-    padding: 20px;
+#top-container {
+    display: flex;
+    align-items: center;
+    height: 50%;
+    justify-content: center;
+    gap: 10rem;
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.summaryEl {
+    font-size: 18px;
+    text-align: center;
+}
+
+
+#posterBox {
+    height: 100%;
+}
+
+#posterBox,
+#details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    text-align: center;
+
+}
+
+#actors-box {
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5%;
+}
+
+.actor-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#flex-container {
+    display: flex;
+}
+
+.headshot-box {
+    height: 100px;
+    overflow: hidden;
+    width: 100px;
+    border-radius: 9999px;
+}
+
+.headshot {
+    width: 100%;
+}
+
+#director-box {
+    color: white;
 }

@@ -36,15 +36,15 @@ async function moviePosters(id) {
         }
         posterBox.appendChild(poster)
         console.log(responseJson)
-        const tmdbId = responseJson.id
-        // trendingMovies(tmdbId)
+        
     }
     catch (error) {
         console.error(error)
     }
 }
 
-async function trendingMovies(tmdbId) {
+async function trendingMovies() {
+
     try {
         const response = await fetch(`https://api.themoviedb.org/3/trending/movie/day?language=en-US&${apiKey}`)
 
@@ -54,20 +54,25 @@ async function trendingMovies(tmdbId) {
 
         const { results } = await response.json()
         console.log(results)
-        const topMovieBox = document.getElementById('topMovieBox')
+
+        const topMovieBox = document.getElementById('topMovieBox');
         for (i = 0; i < 8; i++) {
             const topMovie = results[i]
-            // console.log(topMovie)
+            console.log(topMovie)
             const moviePoster = topMovie.poster_path
             const topMoviePoster = document.createElement('img')
-            topMoviePoster.setAttribute('id', 'top-movie-poster')
+            topMoviePoster.setAttribute('class', 'top-movie-poster')
             topMoviePoster.src = `https://image.tmdb.org/t/p/w500${moviePoster}`
             topMovieBox.appendChild(topMoviePoster)
             const movieTitle = topMovie.title
             console.log(movieTitle)
             topMoviePoster.onclick = function () {
                 localStorage.setItem('selectedMovie', topMovie.id)
-                window.location.href = "/movie-info/index.html"
+                window.location.href = "movie-info/index.html" // potentially await page load
+
+                // fetch id and video info for selected video trailer
+                    // await trailer video
+                    // if no video, insert placeholder of my choice (othervideo, thumbnail, text etc)
             }
         }
 

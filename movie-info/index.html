@@ -11,22 +11,20 @@
     </header>
     <div id="container">
         <aside>
-            <h1>sidebar</h1>
+            <h2>sidebar</h2>
             <!-- add genres here -->
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
+            <ul id="genres"></ul>
         </aside>
         <main>
         <div id="posterBox">
             <!-- movie poster/trailer box -->
         </div>
-        <div>
+        <div id="trailer-container"></div>
+        <div id="details-container">
             <!-- movie info, summary, actors, etc -->
         </div>
         <div>
-            <!-- available streaming platforms -->
+            <!-- TODO:available streaming platforms -->
         </div>
         </main>
         <footer>
@@ -34,6 +32,11 @@
         </footer>
         <!-- <script src="../assets/js/posterApi.js"></script>
         <script src="../assets/js/script.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+        <script src="../assets/js/trailerAPI.js"></script>
+        <script src="../assets/js/youtubeAPI.js"></script>
         <script src="./js/movieInfo.js"></script>
 </body>
 </html>

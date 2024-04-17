@@ -1,0 +1,20 @@
+h1 {
+    text-align: center;
+}
+
+.poster-info {
+    width: 20%;
+    border-radius: .75rem;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    border-bottom: solid;
+    padding: 20px;
+}

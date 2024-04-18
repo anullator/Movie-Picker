@@ -8,7 +8,12 @@ async function getMovieData() {
     // get movie from api
     const movie = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=6c33289f24466f62dfa52aceefb07e8a`);
     const responseJson = await movie.json();
-    console.log(responseJson)
+    console.log(responseJson);
+    const backdropUrl = `https://image.tmdb.org/t/p/w500${responseJson.backdrop_path}`;
+    console.log(backdropUrl);
+
+    // get and appends trailer to page
+    renderTrailer(id, backdropUrl);
 
     // gets movie details from api
     const details = await fetch(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=6c33289f24466f62dfa52aceefb07e8a`);
@@ -43,41 +48,31 @@ async function getMovieData() {
         actorBox.appendChild(characterEl);
         headshotBox.appendChild(headshotEl);
         $('#actors-box').append(actorBox);
-
     }
 
     // get directors
     const directors = jsonDetails.crew.filter(member =>
         member.department === 'Directing'
     )
-    console.log(directors);
 
     directors.forEach(director => {
         // create elements
         const directorBox = document.createElement('div');
         const nameEl = document.createElement('h3');
-        // const headshotEl = document.createElement('img');
 
         // set content of elements
         nameEl.innerHTML = director.name;
-        // const headshotUrl = director.profile_path;
-        // headshotEl.src = `https://image.tmdb.org/t/p/w500${headshotUrl}`;
 
         // add elements to document
         directorBox.appendChild(nameEl);
-        // directorBox.appendChild(headshotEl);
         $('#director-box').append(directorBox);
     })
-
 
     // appends poster to page
     const poster = document.createElement('img');
     poster.src = `https://image.tmdb.org/t/p/w500${responseJson.poster_path}`;
     poster.setAttribute('class', 'poster-info')
     $('#posterBox').append(poster);
-
-    // get and appends trailer to page
-    renderTrailer(id);
 
     // ---- get and append movie details to page -----
 
@@ -110,6 +105,6 @@ async function getMovieData() {
 
 }
 
-getMovieData()
+getMovieData();
 
 

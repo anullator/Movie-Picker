@@ -71,6 +71,6 @@ async function fetchdata(movieInput) {
 
 // load function and add event listeners
 window.onload = function () {
-    document.getElementById('search').addEventListener('click', handleSearch); //revert to handle search
+    document.getElementById('search').addEventListener('click', handleSearch);
     trendingMovies();
 }

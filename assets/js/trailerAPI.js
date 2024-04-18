@@ -7,7 +7,6 @@ async function getYtID(tmdbID) {
         const url = `${baseUrl}?tmdb_id=${tmdbID}&language=en&categories=Trailer`;
         const response = await fetch(url); //get movie by tmdb id
         const result = await response.json();
-        console.log(result);
 
         ytID = result.trailer.youtube_video_id;
     } catch (error) {

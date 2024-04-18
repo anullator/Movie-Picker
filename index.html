@@ -4,6 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" type="text/css" href="assets/css/Semantic-UI-CSS-master/semantic.min.css">
+    <link rel="stylesheet" href="text/css" href="./assets/css/Semantic-UI-CSS-master/components/transition.min.css">
+    <link rel="stylesheet" href="text/css" href="./assets/css/Semantic-UI-CSS-master/components/dimmer.min.css">
+    <link rel="stylesheet" href="text/css" href="./assets/css/Semantic-UI-CSS-master/components/modal.min.css">
 <script
 src="https://code.jquery.com/jquery-3.1.1.min.js"
 integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -13,7 +16,7 @@ crossorigin="anonymous"></script>
 </head>
 <body class="body">
     <header class="nav-bar">
-        <img src="assets\pictures\fauget.png" alt="Movify logo" class="movify-logo">
+        <img src="./assets/pictures/fauget.png" alt="Movify logo" class="movify-logo">
     </header>
     <div id="container">
         <main>
@@ -24,6 +27,29 @@ crossorigin="anonymous"></script>
                     <input class="input-bar" id="title" name="title" type="text" placeholder="Search....">
                     <button id="search" class="ui right labeled icon button inverted"><i class="right arrow icon"></i>Search</button>
                 </div>
+
+                <!-- NO MOVIE TITLE MODAL -->
+                <div class="ui modal mini">
+                    <i class="close icon"></i>
+                    <div class="header">
+                        Error: No Movie Searched
+                    </div>
+                    <div class="image content">
+                        <div class="ui medium image">
+                            <i class="frown outline icon"></i>
+                        </div>
+                        <div class="description">
+                            <div class="ui header">Please enter a movie title...</div>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <div class="ui red right labeled icon deny button">
+                            Go Back
+                            <i class="undo icon"></i>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- top movies container -->
                 <div id="topMovieBox"></div>
             </section>
@@ -44,6 +70,9 @@ crossorigin="anonymous"></script>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+    <script src="./assets/css/Semantic-UI-CSS-master/components/transition.min.js"></script>
+    <script src="./assets/css/Semantic-UI-CSS-master/components/dimmer.min.js"></script>
+    <script src="./assets/css/Semantic-UI-CSS-master/components/modal.min.js"></script>
     <script src="./assets/js/youtubeAPI.js"></script>
     <script src="./assets/js/trailerAPI.js"></script>
     <script src="./assets/js/posterApi.js"></script>

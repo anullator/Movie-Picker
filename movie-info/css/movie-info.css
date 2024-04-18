@@ -141,4 +141,17 @@ iframe {
         width: 100%;
         height: 100%;
     }
+
+
+    #top-container {
+        gap: 0
+    }
+
+    #posterBox {
+        width: 100%;
+    }
+
+    #details-container {
+        width: 100%;
+    }
 }

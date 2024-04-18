@@ -31,7 +31,7 @@ async function renderTrailer(tmdbID, backdropUrl) {
         $('#trailer-container').text('No trailer available');
         $('#trailer-container').addClass('no-trailer'); // adds class for the below css style
 
-        //TODO: THIS CSS SHOULD PROBABLY BE PUT IN A CLASS in a css file THEN UNCOMMENT LINE 34 TO ATTACH THE CLASS TO THE ELEMENT
+        //TODO: THIS CSS SHOULD PROBABLY BE PUT IN A CLASS in a css file 
         $('.no-trailer').css({
             'background-image': `url(${backdropUrl})`,
             'background-size': 'contain',

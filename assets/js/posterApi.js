@@ -51,27 +51,27 @@ searchMessage.textContent = `Results for "${localStorage.getItem('title')}"`
 searchBox.appendChild(searchMessage)
 
 
-async function trendingMovies(tmdbId) {
+async function trendingMovies() {
     try {
-        const response = await fetch(`https://api.themoviedb.org/3/trending/movie/day?language=en-US&${apiKey}`)
+        const response = await fetch(`https://api.themoviedb.org/3/trending/movie/day?language=en-US&${apiKey}`);
 
         if (!response.ok) {
-            throw new error('could not fetch')
+            throw new error('could not fetch');
         }
 
-        const { results } = await response.json()
-        console.log(results)
-        const topMovieBox = document.getElementById('topMovieBox')
+        const { results } = await response.json();
+        console.log(results);
+        const topMovieBox = document.getElementById('topMovieBox');
         for (i = 0; i < 12; i++) {
-            const topMovie = results[i]
+            const topMovie = results[i];
             // console.log(topMovie)
-            const moviePoster = topMovie.poster_path
-            const topMoviePoster = document.createElement('img')
-            topMoviePoster.setAttribute('class', 'top-movie-poster')
-            topMoviePoster.src = `https://image.tmdb.org/t/p/w500${moviePoster}`
-            topMovieBox.appendChild(topMoviePoster)
-            const movieTitle = topMovie.title
-            console.log(movieTitle)
+            const moviePoster = topMovie.poster_path;
+            const topMoviePoster = document.createElement('img');
+            topMoviePoster.setAttribute('class', 'top-movie-poster');
+            topMoviePoster.src = `https://image.tmdb.org/t/p/w500${moviePoster}`;
+            topMovieBox.appendChild(topMoviePoster);
+            const movieTitle = topMovie.title;
+            console.log(movieTitle);
             topMoviePoster.onclick = function () {
                 localStorage.setItem('selectedMovie', topMovie.id)
                 window.location.href = "./movie-info/index.html"

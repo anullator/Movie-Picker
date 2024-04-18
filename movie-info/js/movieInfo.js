@@ -18,14 +18,18 @@ async function getMovieData() {
     // get top 5 actors
     const actors = jsonDetails.cast;
     console.log(actors);
-    
+
     for (let i = 0; i < 5; i++) {
 
         // create elements
         const actorBox = document.createElement('div');
+        actorBox.setAttribute('class', 'actor-flex')
         const nameEl = document.createElement('h3');
         const characterEl = document.createElement('p');
+        const headshotBox = document.createElement('div')
+        headshotBox.setAttribute('class', 'headshot-box')
         const headshotEl = document.createElement('img');
+        headshotEl.setAttribute('class', 'headshot')
 
         // set content of elements
         nameEl.innerHTML = actors[i].name;
@@ -35,14 +39,15 @@ async function getMovieData() {
 
         // add elements to document
         actorBox.appendChild(nameEl);
+        actorBox.appendChild(headshotBox)
         actorBox.appendChild(characterEl);
-        actorBox.appendChild(headshotEl);
+        headshotBox.appendChild(headshotEl);
         $('#actors-box').append(actorBox);
 
     }
 
     // get directors
-    const directors = jsonDetails.crew.filter(member => 
+    const directors = jsonDetails.crew.filter(member =>
         member.department === 'Directing'
     )
     console.log(directors);
@@ -51,16 +56,16 @@ async function getMovieData() {
         // create elements
         const directorBox = document.createElement('div');
         const nameEl = document.createElement('h3');
-        const headshotEl = document.createElement('img');
+        // const headshotEl = document.createElement('img');
 
         // set content of elements
         nameEl.innerHTML = director.name;
-        const headshotUrl = director.profile_path;
-        headshotEl.src = `https://image.tmdb.org/t/p/w500${headshotUrl}`;
+        // const headshotUrl = director.profile_path;
+        // headshotEl.src = `https://image.tmdb.org/t/p/w500${headshotUrl}`;
 
         // add elements to document
         directorBox.appendChild(nameEl);
-        directorBox.appendChild(headshotEl);
+        // directorBox.appendChild(headshotEl);
         $('#director-box').append(directorBox);
     })
 
@@ -91,6 +96,7 @@ async function getMovieData() {
     // movie summary
     const summaryEl = document.createElement('p');
     summaryEl.innerHTML = responseJson.overview;
+    summaryEl.setAttribute('class', 'summaryEL')
     $('#details-container').append(summaryEl);
 
     // ---- add genres -----

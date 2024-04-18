@@ -11,18 +11,18 @@ crossorigin="anonymous"></script>
 <script src="assets/css/Semantic-UI-CSS-master/semantic.min.js"></script>
     <title>Movify</title>
 </head>
-<body>
-    <header>
-        <h1 >Movify</h1>
+<body class="body">
+    <header class="nav-bar">
+        <img src="assets\pictures\fauget.png" alt="Movify logo" class="movify-logo">
     </header>
     <div id="container">
         <main>
             <section>
                 <!-- search container -->
-                <div id="search-box" class="ui icon input">
+                <div id="search-box" class="ui icon input inverted transparent">
                     <label for="title">Search Movify</label>
-                    <input id="title" name="title" type="text" placeholder="Search....">
-                    <button id="search" class="ui right labeled icon"><i class="right arrow icon"></i>Search</button>
+                    <input class="input-bar" id="title" name="title" type="text" placeholder="Search....">
+                    <button id="search" class="ui right labeled icon button inverted"><i class="right arrow icon"></i>Search</button>
                 </div>
                 <!-- top movies container -->
                 <div id="topMovieBox"></div>

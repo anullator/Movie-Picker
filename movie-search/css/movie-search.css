@@ -1,44 +1,56 @@
-header {
-    border-bottom: solid;
-    padding: 20px;
+.nav-bar {
+    border-bottom: solid white;
+    display: flex;
+    justify-content: center;
+    background-color: #181a1b;
 }
 
 h1 {
     text-align: center;
 }
 
-body {
+
+.body {
     margin: 0;
-    display: flex;
-    flex-direction: column;
+    background-color: #181a1b;
 }
+
 
 #container {
-    display: flex;
-    height: 100%;
-
+    max-width: 1560px;
+    margin: 0 auto;
 }
 
-section {
-    display: flex;
-    flex-direction: column;
-}
 
 #posterBox {
     display: flex;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 12px;
     justify-content: center;
 }
 
 .poster {
-    width: 20%;
-    border-radius: .75rem;
+    flex: 0 0 250px;
+    font-family: Arial;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: .5rem;
+    height: 500px;
 }
+
 
 #searchBox {
     text-align: center;
     font-size: 40px;
     padding: 25px;
+}
 
+.search-result-msg {
+    color: white;
 }

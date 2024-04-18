@@ -1,6 +1,6 @@
 .top-movie-poster {
     width: 20%;
-    border-radius: 1rem;
+    border-radius: .75rem;
 
 }
 
@@ -8,7 +8,7 @@ h1 {
     text-align: center;
 }
 
-body {
+.body {
     margin: 0;
     height: 100vh;
     display: flex;
@@ -16,9 +16,11 @@ body {
     background-color: #181a1b;
 }
 
-header {
-    border-bottom: solid;
-    padding: 20px;
+.nav-bar {
+    border-bottom: solid white;
+    display: flex;
+    justify-content: center;
+    background-color: #181a1b;
 }
 
 #container {
@@ -39,6 +41,12 @@ section {
     align-items: center;
     margin: 20px;
     gap: 10px;
+}
+
+#title {
+    border: 1px solid white !important;
+    padding: 1rem !important;
+    border-radius: .5rem !important;
 }
 
 label {
@@ -66,4 +74,8 @@ label {
 .poster-info {
     width: 20%;
     border-radius: .75rem;
+}
+
+.movify-logo {
+    width: 25%;
 }

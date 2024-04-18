@@ -46,6 +46,7 @@ async function moviePosters(id) {
 
 const searchBox = document.getElementById('searchBox')
 const searchMessage = document.createElement('h2')
+searchMessage.setAttribute('class', 'search-result-msg')
 searchMessage.textContent = `Results for "${localStorage.getItem('title')}"`
 searchBox.appendChild(searchMessage)
 
@@ -73,7 +74,7 @@ async function trendingMovies(tmdbId) {
             console.log(movieTitle)
             topMoviePoster.onclick = function () {
                 localStorage.setItem('selectedMovie', topMovie.id)
-                window.location.href = "movie-info/index.html"
+                window.location.href = "./movie-info/index.html"
             }
         }
 

@@ -8,6 +8,13 @@ async function getYtFrame(trailerID) {
     try {
         const response = await fetch(fetchUrl);
         const result = await response.json();
+
+        console.log(result);
+
+        // testing only <-------
+        const player = result.items[0].player;
+        console.log(player);
+
         ytHTML = result.items[0].player.embedHtml; // gets YouTube iframe
     } catch (error) {
         console.log(error);

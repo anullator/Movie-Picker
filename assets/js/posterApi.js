@@ -33,7 +33,16 @@ async function moviePosters(id) {
         poster.onclick = function () {
             console.log('clicked', responseJson.id)
             localStorage.setItem('selectedMovie', responseJson.id)
-            window.location.href = "/movie-info/index.html"
+            const baseURL = window.location.origin;
+
+            // Check if running locally
+            if (baseURL.includes("127.0.0.1")) {
+                // Local development path
+                window.location.href = baseURL + "/movie-info/index.html";
+            } else {
+                // Deployed path
+                window.location.href = baseURL + "/movie-picker/movie-info/index.html";
+            }
         }
         posterBox.appendChild(poster)
         console.log(responseJson)

@@ -79,3 +79,21 @@ label {
 .movify-logo {
     width: 25%;
 }
+
+@media screen and (max-width: 1024px) {
+    #topMovieBox {
+        display: flex;
+        height: 100%;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .top-movie-poster {
+        width: 25%;
+    }
+
+    .search-button {
+        width: 30% !important;
+    }
+}

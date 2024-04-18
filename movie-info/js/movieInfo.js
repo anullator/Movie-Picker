@@ -55,14 +55,14 @@ async function getMovieData() {
     directors.forEach(director => {
         // create elements
         const directorBox = document.createElement('div');
-        const nameEl = document.createElement('h3');
+        const nameEl = document.createElement('h4');
         // const headshotEl = document.createElement('img');
 
         // set content of elements
-        nameEl.innerHTML = director.name;
+        nameEl.innerHTML = director.name
+        directorBox.setAttribute('class', 'director-name')
         // const headshotUrl = director.profile_path;
         // headshotEl.src = `https://image.tmdb.org/t/p/w500${headshotUrl}`;
-
         // add elements to document
         directorBox.appendChild(nameEl);
         // directorBox.appendChild(headshotEl);
@@ -103,7 +103,7 @@ async function getMovieData() {
     const genres = responseJson.genres;
 
     genres.forEach(genre => {
-        const genreEl = document.createElement('li');
+        const genreEl = document.createElement('p');
         genreEl.innerHTML = genre.name;
         $('#genres').append(genreEl);
     })

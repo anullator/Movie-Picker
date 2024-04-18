@@ -41,7 +41,7 @@ async function moviePosters(id) {
                 window.location.href = baseURL + "/movie-info/index.html";
             } else {
                 // Deployed path
-                window.location.href = baseURL + "/movie-picker/movie-info/index.html";
+                window.location.href = baseURL + "/Movie-Picker/movie-info/index.html";
             }
         }
         posterBox.appendChild(poster)

@@ -3,14 +3,11 @@ const movieInput = localStorage.getItem('title');
 
 async function getMovieData() {
     const id = localStorage.getItem('selectedMovie');
-    console.log(id);
 
     // get movie from api
     const movie = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=6c33289f24466f62dfa52aceefb07e8a`);
     const responseJson = await movie.json();
-    console.log(responseJson);
     const backdropUrl = `https://image.tmdb.org/t/p/w500${responseJson.backdrop_path}`;
-    console.log(backdropUrl);
 
     // get and appends trailer to page
     renderTrailer(id, backdropUrl);
@@ -18,11 +15,9 @@ async function getMovieData() {
     // gets movie details from api
     const details = await fetch(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=6c33289f24466f62dfa52aceefb07e8a`);
     const jsonDetails = await details.json();
-    console.log(jsonDetails);
 
     // get top 5 actors
     const actors = jsonDetails.cast;
-    console.log(actors);
 
     for (let i = 0; i < 5; i++) {
 
